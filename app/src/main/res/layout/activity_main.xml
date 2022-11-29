@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ImageView
+        android:id="@+id/imgQatar"
+        android:layout_width="239dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="197dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/qatar22" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="349dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="326dp"
+        android:text="@string/btnRegistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/red"
+        android:backgroundTintMode="@color/red"/>
+
+    <Button
+        android:id="@+id/btnConsultar"
+        android:layout_width="349dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="393dp"
+        android:text="@string/btnConsulta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/red"
+        android:backgroundTintMode="@color/red"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

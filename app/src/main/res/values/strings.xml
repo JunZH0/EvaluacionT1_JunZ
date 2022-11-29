@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">EvaluacionT1_JunZ</string>
+    <string name="app_name">Qatar2022</string>
+    <string name="btnRegistrar">REGISTRAR RESULTADO</string>
+    <string name="btnConsulta">CONSULTAR RESULTADOS</string>
 </resources>
