@@ -19,15 +19,15 @@
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="349dp"
-        android:layout_height="42dp"
+        android:layout_width="345dp"
+        android:layout_height="45dp"
         android:layout_marginTop="326dp"
+        android:backgroundTint="@color/red"
+        android:backgroundTintMode="@color/red"
         android:text="@string/btnRegistrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/red"
-        android:backgroundTintMode="@color/red"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnConsultar"

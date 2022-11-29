@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/editTextGol2"
+        android:layout_width="160dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="214dp"
+        android:layout_marginTop="451dp"
+        android:layout_marginEnd="37dp"
+        android:ems="10"
+        android:hint="@string/hintGol2"
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFase1"
+        android:layout_width="143dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFase2"
+        android:layout_width="143dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="359dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuardarRes"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="587dp"
+        android:text="@string/btnGuarRes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLimpiarDatos"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="651dp"
+        android:text="@string/btnLimpiarDat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textViewIntro"
+        android:layout_width="199dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="197dp"
+        android:text="@string/editTxtIntroResult"
+        android:textSize="@dimen/textSizeTitulo"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="352dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="43dp"
+        android:ems="10"
+        android:hint="@string/hintFecha"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextFase"
+        android:layout_width="360dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="35dp"
+        android:ems="10"
+        android:hint="@string/hintFases"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextEq1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="185dp"
+        android:ems="10"
+        android:hint="@string/hintSelect1"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextEq2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="359dp"
+        android:layout_marginEnd="185dp"
+        android:ems="10"
+        android:hint="@string/hintSelect2"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextGol1"
+        android:layout_width="168dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="451dp"
+        android:layout_marginEnd="214dp"
+        android:ems="10"
+        android:hint="@string/hintGol1"
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewGuion"
+        android:layout_width="62dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="448dp"
+        android:layout_marginEnd="175dp"
+        android:gravity="center_horizontal"
+        android:text="-"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
