@@ -42,4 +42,6 @@
     <string name="btnAceptar">ACEPTAR</string>
     <string name="btnCancelar">Cancelar</string>
     <string name="editTextIntroPais">Introduce el país seleccionado</string>
+    <string name="txtViewConsultaRes">Consulta resultados por país</string>
+    <string name="hintIntroPais">Introduce el país</string>
 </resources>
