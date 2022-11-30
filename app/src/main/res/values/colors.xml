@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#A80303</color>
     <color name="red_statusBar">#7D0303</color>
+    <color name="grey" />
 </resources>

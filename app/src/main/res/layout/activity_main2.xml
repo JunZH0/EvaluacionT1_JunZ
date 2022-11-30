@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+
+    <!-- TODO Implementar orientacion horizontal-->
+
     <TextView
         android:id="@+id/textViewIntro"
         android:layout_width="match_parent"
@@ -19,6 +22,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout7"
@@ -70,15 +75,15 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <EditText
-            android:id="@+id/editTextGol2"
+            android:id="@+id/editTextGol1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:ems="10"
-            android:hint="@string/hintGol2"
+            android:hint="@string/hintGol1"
             android:inputType="number"
             android:minHeight="48dp"
-            android:text=""
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -89,22 +94,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:gravity="center_horizontal"
-            android:text=" - "
+            android:text="@string/textGuion"
             android:textSize="@dimen/textSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextGol1"
+            android:id="@+id/editTextGol2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:ems="10"
-            android:hint="@string/hintGol1"
+            android:hint="@string/hintGol2"
             android:inputType="number"
             android:minHeight="48dp"
-            android:text=""
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
