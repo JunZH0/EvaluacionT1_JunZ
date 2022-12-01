@@ -27,7 +27,7 @@ public class MainActivity3 extends AppCompatActivity {
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                onBackPressed();
             }
         });
 
@@ -35,7 +35,15 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity3.this,MainActivity2.class);
+                Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
+                intent.putExtra("pais",editTextIntroPais.getText().toString());
+                startActivity(intent);
+
+                Intent intent2 = new Intent(MainActivity3.this, MainActivity2.class);
+                intent2.putExtra("pais",editTextIntroPais.getText().toString());
+                startActivity(intent2);
+
+
             }
         });
 

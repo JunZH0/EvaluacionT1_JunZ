@@ -59,6 +59,11 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
         btnLimpiarDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +77,7 @@ public class MainActivity2 extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                 startActivity(intent);
                 // TODO implementar metodo para mostrar el equipo de MainActiviy3 en el campo editTextEq1 y editTextEq2
+                getDatosActivity();
             }
         });
 
@@ -80,10 +86,19 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                 startActivity(intent);
+                getDatosActivity();
             }
         });
 
     }
+
+    private void getDatosActivity() {
+        Intent intent = getIntent();
+        String pais = intent.getStringExtra("pais");
+        editTextEq1.setText(pais);
+    }
+
+
 
 
     private void initElementos() {
