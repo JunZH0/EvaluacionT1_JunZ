@@ -5,12 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity3 extends AppCompatActivity {
 // Pantalla de seleccion de equipos
 
+    TableLayout tabLayout1;
     Button btnAceptar,btnCancelar;
     EditText editTextIntroPais;
 
@@ -23,6 +29,17 @@ public class MainActivity3 extends AppCompatActivity {
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
         editTextIntroPais = findViewById(R.id.editTextIntroPais);
+        tabLayout1 = findViewById(R.id.tabLayout1);
+
+        for (int i = 0; i < ((ViewGroup) tabLayout1).getChildCount(); i++) {
+            TableRow row = (TableRow) ((ViewGroup) tabLayout1).getChildAt(i);
+            for (int j = 0; j < ((ViewGroup) row).getChildCount(); j++) {
+                Button button = (Button) ((ViewGroup) row).getChildAt(j);
+                button.setOnClickListener(view -> editTextIntroPais.setText(button.getText()));
+            }
+        }
+
+
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,12 +52,13 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
                 intent.putExtra("pais",editTextIntroPais.getText().toString());
                 startActivity(intent);
 
                 Intent intent2 = new Intent(MainActivity3.this, MainActivity2.class);
-                intent2.putExtra("pais",editTextIntroPais.getText().toString());
+                intent2.putExtra("pais2",editTextIntroPais.getText().toString());
                 startActivity(intent2);
 
 

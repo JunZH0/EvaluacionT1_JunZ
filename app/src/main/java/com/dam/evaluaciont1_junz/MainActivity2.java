@@ -62,41 +62,31 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
+        btnLimpiarDatos.setOnClickListener(v -> limpiarDatos());
 
 
-        btnLimpiarDatos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                limpiarDatos();
-            }
+
+        btnFase1.setOnClickListener(v -> {
+
+            Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+            intent.putExtra("eqSelect", "eq1");
+            startActivity(intent);
+            // TODO implementar metodo para mostrar el equipo de MainActiviy3 en el campo editTextEq1
+
+
         });
 
-        btnFase1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-                startActivity(intent);
-                // TODO implementar metodo para mostrar el equipo de MainActiviy3 en el campo editTextEq1 y editTextEq2
-                getDatosActivity();
-            }
-        });
 
-        btnFase2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-                startActivity(intent);
-                getDatosActivity();
-            }
+        btnFase2.setOnClickListener(v -> {
+            Intent intent2 = new Intent(MainActivity2.this, MainActivity3.class);
+            intent2.putExtra("eqSelect", "eq2");
+            startActivity(intent2);
+
         });
 
     }
 
-    private void getDatosActivity() {
-        Intent intent = getIntent();
-        String pais = intent.getStringExtra("pais");
-        editTextEq1.setText(pais);
-    }
+
 
 
 
