@@ -51,8 +51,6 @@ public class MainActivity2 extends AppCompatActivity {
                     String gol1 = editTextGol1.getText().toString();
                     String gol2 = editTextGol2.getText().toString();
 
-                    // TODO Guardar los datos en la base de datos
-
 
                     Toast.makeText(MainActivity2.this, "Los datos se han guardado correctamente", Toast.LENGTH_SHORT).show();
 

@@ -7,6 +7,7 @@
     tools:context=".MainActivity2">
 
 
+    <!-- TODO Implementar orientacion horizontal-->
 
     <TextView
         android:id="@+id/textViewIntro"
@@ -23,41 +24,44 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnGuardarRes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/btnGuarRes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_weight=".5"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8" />
 
         <Button
             android:id="@+id/btnLimpiarDatos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/btnLimpiarDat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_weight=".5"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -66,10 +70,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
@@ -79,10 +84,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/hintGol1"
             android:inputType="number"
             android:minHeight="48dp"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -105,10 +110,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/hintGol2"
             android:inputType="number"
             android:minHeight="48dp"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -131,6 +136,7 @@
             android:id="@+id/editTextEq2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:hint="@string/hintSelect2"
             android:inputType="text"
@@ -139,8 +145,9 @@
 
         <Button
             android:id="@+id/btnFase2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/btnSelect" />
 
     </LinearLayout>
@@ -165,7 +172,7 @@
             android:id="@+id/editTextEq1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:ems="10"
             android:hint="@string/hintSelect1"
             android:inputType="text"
@@ -177,9 +184,9 @@
 
         <Button
             android:id="@+id/btnFase1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:text="@string/btnSelect" />
 
     </LinearLayout>
@@ -189,7 +196,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
