@@ -40,7 +40,6 @@ public class MainActivity2 extends AppCompatActivity {
                 if (editTextDate.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
 
-                    // Usar un Toast por el momento
                     Toast.makeText(MainActivity2.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
 
                 } else if (Integer.parseInt(editTextGol1.getText().toString()) > MAX_GOLES ||
@@ -112,7 +111,6 @@ public class MainActivity2 extends AppCompatActivity {
         btnGuardarRes = findViewById(R.id.btnGuardarRes);
         btnLimpiarDatos = findViewById(R.id.btnLimpiarDatos);
         spn1 = findViewById(R.id.spn1);
-        editTextFase = findViewById(R.id.editTextFase);
         editTextDate = findViewById(R.id.editTextDate);
         editTextEq1 = findViewById(R.id.editTextEq1);
         editTextEq2 = findViewById(R.id.editTextEq2);

@@ -7,9 +7,6 @@
     tools:context=".MainActivity2">
 
 
-    <!-- TODO Implementar orientacion horizontal-->
-
-
     <TextView
         android:id="@+id/textViewIntro"
         android:layout_width="match_parent"
@@ -21,7 +18,7 @@
         android:textSize="@dimen/textSizeTitulo"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,10 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -51,7 +49,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.8" />
+            android:layout_weight="1.7" />
 
         <Button
             android:id="@+id/btnLimpiarDatos"
@@ -68,16 +66,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="655dp"
+        android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/editTextGol1"
@@ -122,8 +119,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="646dp"
+        android:layout_height="41dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -135,9 +132,8 @@
 
         <EditText
             android:id="@+id/editTextEq2"
-            android:layout_width="wrap_content"
+            android:layout_width="416dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:ems="10"
             android:hint="@string/hintSelect2"
             android:inputType="text"
@@ -146,34 +142,29 @@
 
         <Button
             android:id="@+id/btnFase2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/btnSelect" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="651dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <EditText
             android:id="@+id/editTextEq1"
-            android:layout_width="wrap_content"
+            android:layout_width="414dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:ems="10"
             android:hint="@string/hintSelect1"
             android:inputType="text"
@@ -185,17 +176,17 @@
 
         <Button
             android:id="@+id/btnFase1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:text="@string/btnSelect" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="664dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
@@ -206,20 +197,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewIntro">
 
         <EditText
-            android:id="@+id/editTextFase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintFases"
-            android:inputType="text"
-            android:text="" />
-
-        <EditText
             android:id="@+id/editTextDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hintFecha"
             android:inputType="text"
             android:minHeight="48dp" />
+
+        <Spinner
+            android:id="@+id/spn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/listaFases"
+            android:minHeight="48dp" />
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
