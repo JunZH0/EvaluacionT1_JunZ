@@ -1,5 +1,9 @@
 package com.dam.evaluaciont1_junz;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,8 +17,9 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 // Pantalla de Registro de Resultado
+
     Button btnFase1,btnFase2,btnGuardarRes,btnLimpiarDatos;
-    EditText editTextFase, editTextDate,editTextEq1,editTextEq2,editTextGol1,editTextGol2;
+    EditText editTextFase, editTextDate,editTextEq1,editTextEq2,editTextGol1,editTextGol2, inforEq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
                 // TODO implementar metodo para comprobar que el input del usuario en el campo editTextFase tenga el formato de fecha correcta
                 if (editTextFase.getText().toString().isEmpty() || editTextDate.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
-                    /*TODO Muestra todos los campos como vacio aunque solo uno lo este, Arreglar
-                    editTextFase.setError("Campo Obligatorio");
-                    editTextDate.setError("Campo Obligatorio");
-                    editTextEq1.setError("Campo Obligatorio");
-                    editTextEq2.setError("Campo Obligatorio");
-                    editTextGol1.setError("Campo Obligatorio");
-                    editTextGol2.setError("Campo Obligatorio");
-                    */
+
                     // Usar un Toast por el momento
                     Toast.makeText(MainActivity2.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
 
@@ -61,34 +59,42 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
+        ActivityResultLauncher<Intent> aRLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK) {
+                        String equipo = result.getData().getStringExtra(MainActivity3.CLAVE_PAIS);
+                        inforEq.setText(equipo);
+                    }
+                }
+            }
+        );
+
 
         btnLimpiarDatos.setOnClickListener(v -> limpiarDatos());
 
 
 
         btnFase1.setOnClickListener(v -> {
-
-            Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-            intent.putExtra("eqSelect", "eq1");
-            startActivity(intent);
-            // TODO implementar metodo para mostrar el equipo de MainActiviy3 en el campo editTextEq1
-
-
+            inforEq = editTextEq1;
+            selectEquipo(aRLauncher);
         });
 
 
         btnFase2.setOnClickListener(v -> {
-            Intent intent2 = new Intent(MainActivity2.this, MainActivity3.class);
-            intent2.putExtra("eqSelect", "eq2");
-            startActivity(intent2);
+            inforEq = editTextEq2;
+            selectEquipo(aRLauncher);
 
         });
 
     }
 
-
-
-
+    private void selectEquipo(ActivityResultLauncher<Intent> aRLauncher) {
+        Intent intent = new Intent(this, MainActivity3.class);
+        aRLauncher.launch(intent);
+    }
 
 
     private void initElementos() {

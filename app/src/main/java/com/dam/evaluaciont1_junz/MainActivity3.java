@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity3 extends AppCompatActivity {
 // Pantalla de seleccion de equipos
-
+    public static final String CLAVE_PAIS = "pais";
     TableLayout tabLayout1;
     Button btnAceptar,btnCancelar;
     EditText editTextIntroPais;
@@ -51,15 +51,10 @@ public class MainActivity3 extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_OK, getIntent());
+                getIntent().putExtra(CLAVE_PAIS, editTextIntroPais.getText().toString());
 
-
-                Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
-                intent.putExtra("pais",editTextIntroPais.getText().toString());
-                startActivity(intent);
-
-                Intent intent2 = new Intent(MainActivity3.this, MainActivity2.class);
-                intent2.putExtra("pais2",editTextIntroPais.getText().toString());
-                startActivity(intent2);
+                finish();
 
 
             }
