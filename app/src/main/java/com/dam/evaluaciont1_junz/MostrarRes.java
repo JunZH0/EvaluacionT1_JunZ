@@ -30,17 +30,34 @@ public class MostrarRes extends AppCompatActivity {
         btnSelect = findViewById(R.id.btnSelect);
         editTextPais2 = findViewById(R.id.editTextPais2);
 
-        btnSelect.setOnClickListener(new View.OnClickListener() {
-
-            ActivityResultLauncher<Intent> aRLauncher = getIntentActivityResultLauncher();
-
-            public void onClick(View v) {
-                inforEq2 = editTextPais2;
-                selectEquipo(aRLauncher);
-            }
-        });
 
 
+        if (editTextPais2.getText().toString().isEmpty()) {
+            btnSelect.setOnClickListener(new View.OnClickListener() {
+                ActivityResultLauncher<Intent> aRLauncher = getIntentActivityResultLauncher();
+
+
+                public void onClick(View v) {
+                    inforEq2 = editTextPais2;
+                    selectEquipo(aRLauncher);
+                }
+            });
+        } else {
+            btnSelect.setText("Limpiar Datos");
+            btnSelect.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    limpiarCampo();
+                }
+            });
+        }
+
+    }
+
+
+    public void limpiarCampo() {
+        editTextPais2.setText(null);
     }
 
     private ActivityResultLauncher<Intent> getIntentActivityResultLauncher() {
@@ -52,12 +69,15 @@ public class MostrarRes extends AppCompatActivity {
                         if (result.getResultCode() == RESULT_OK) {
                             String equipo = result.getData().getStringExtra(SelectEquipo.CLAVE_PAIS);
                             inforEq2.setText(equipo);
+
                         }
                     }
                 }
         );
         return aRLauncher;
     }
+
+
 
     private void selectEquipo(ActivityResultLauncher<Intent> aRLauncher) {
         Intent intent = new Intent(this, SelectEquipo.class);

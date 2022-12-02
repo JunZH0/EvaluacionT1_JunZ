@@ -74,8 +74,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -91,8 +91,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView2"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -105,8 +105,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView3"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -119,8 +119,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView4"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -133,8 +133,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView5"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -147,8 +147,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView6"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
 
@@ -161,8 +161,8 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView7"
                 android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_fragmento_resultados" />
         </FrameLayout>
     </LinearLayout>

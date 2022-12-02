@@ -3,4 +3,6 @@
     <dimen name="textSize">40sp</dimen>
     <dimen name="textSizeTitulo">25sp</dimen>
     <dimen name="frameLayoutSize">54dp</dimen>
+    <dimen name="btnHeight">42dp</dimen>
+    <dimen name="btnWidth">80dp</dimen>
 </resources>
