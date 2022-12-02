@@ -6,23 +6,31 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity {
 // Pantalla de Registro de Resultado
-
+    final Calendar calendario = Calendar.getInstance();
     static final int MAX_GOLES = 15;
     Button btnFase1,btnFase2,btnGuardarRes,btnLimpiarDatos;
     Spinner spn1;
-    EditText editTextFase, editTextDate,editTextEq1,editTextEq2,editTextGol1,editTextGol2, inforEq;
+    EditText editTextHora,editTextDate,editTextEq1,editTextEq2,editTextGol1,editTextGol2, inforEq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +38,44 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         initElementos();
-        ocultarCampos();
+        bloquearEdit();
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int anio, int mes, int dia) {
+                calendario.set(Calendar.YEAR, anio);
+                calendario.set(Calendar.MONTH,mes);
+                calendario.set(Calendar.DAY_OF_MONTH,dia);
+                updateLabel();
+            }
+        };
+
+        editTextDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(MainActivity2.this,date,calendario.get(Calendar.YEAR),calendario.get(Calendar.MONTH),calendario.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        editTextHora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity2.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        editTextHora.setText(hourOfDay+":"+minute);
+                    }
+                },0,0,true);
+                timePickerDialog.show();
+            }
+        });
 
         btnGuardarRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // TODO implementar metodo para comprobar que el input del usuario en el campo editTextFase tenga el formato de fecha correcta
-                if (editTextDate.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
+                if (editTextDate.getText().toString().isEmpty() || editTextHora.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
 
                     Toast.makeText(MainActivity2.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
@@ -51,7 +89,8 @@ public class MainActivity2 extends AppCompatActivity {
                 else {
                     // Supuesto Guardado de datos
                     String fase = spn1.getSelectedItem().toString();
-                    String date = editTextDate.getText().toString();
+                    String hora = editTextHora.getText().toString();
+                    String fecha = editTextDate.getText().toString();
                     String eq1 = editTextEq1.getText().toString();
                     String eq2 = editTextEq2.getText().toString();
                     String gol1 = editTextGol1.getText().toString();
@@ -99,6 +138,17 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
 
+    private void updateLabel(){
+        String myFormat="MM/dd/yy";
+        SimpleDateFormat dateFormat= null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            dateFormat = new SimpleDateFormat(myFormat, Locale.forLanguageTag("es"));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            editTextDate.setText(dateFormat.format(calendario.getTime()));
+        }
+    }
+
     private void selectEquipo(ActivityResultLauncher<Intent> aRLauncher) {
         Intent intent = new Intent(this, MainActivity3.class);
         aRLauncher.launch(intent);
@@ -111,6 +161,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnGuardarRes = findViewById(R.id.btnGuardarRes);
         btnLimpiarDatos = findViewById(R.id.btnLimpiarDatos);
         spn1 = findViewById(R.id.spn1);
+        editTextHora = findViewById(R.id.editTextHora);
         editTextDate = findViewById(R.id.editTextDate);
         editTextEq1 = findViewById(R.id.editTextEq1);
         editTextEq2 = findViewById(R.id.editTextEq2);
@@ -120,6 +171,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void limpiarDatos(){
         spn1.setSelection(0);
+        editTextHora.setText(null);
         editTextDate.setText(null);
         editTextEq1.setText(null);
         editTextEq2.setText(null);
@@ -127,7 +179,7 @@ public class MainActivity2 extends AppCompatActivity {
         editTextGol2.setText(null);
     }
 
-    public void ocultarCampos(){
+    public void bloquearEdit(){
         int gris = Color.parseColor("#ebe8e8");
 
         editTextEq1.setFocusable(false);

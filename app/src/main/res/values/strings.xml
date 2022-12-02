@@ -6,7 +6,8 @@
     <string name="btnSelect">SELECCIONAR</string>
     <string name="btnGuarRes">GUARDAR RESULTADO</string>
     <string name="btnLimpiarDat">LIMPIAR DATOS</string>
-    <string name="hintFecha">Introduce la fecha dd/mm//yyyy hh:mi</string>
+    <string name="hintFecha">Introduce la fecha dd/mm//yyyy </string>
+    <string name="hintHora">Introduce la hora hh:mm</string>
     <string name="hintFases">Introduce la fase: Fase grupos, Octavos,\nCuartos, Semifinales, Tercer puesto, Final</string>
     <string name="hintSelect1">Seleccionar el equipo 1</string>
     <string name="hintSelect2">Seleccionar el equipo 2</string>
