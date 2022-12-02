@@ -500,13 +500,13 @@
         android:id="@+id/textViewSelEq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="211dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="70dp"
         android:text="@string/editTextSelectEq"
         android:textSize="@dimen/textSizeTitulo"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

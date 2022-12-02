@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="textSize">40sp</dimen>
-    <dimen name="textSizeTitulo">20sp</dimen>
+    <dimen name="textSizeTitulo">25sp</dimen>
     <dimen name="frameLayoutSize">54dp</dimen>
 </resources>

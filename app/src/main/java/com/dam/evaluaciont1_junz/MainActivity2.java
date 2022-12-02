@@ -13,12 +13,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 // Pantalla de Registro de Resultado
 
+    static final int MAX_GOLES = 15;
     Button btnFase1,btnFase2,btnGuardarRes,btnLimpiarDatos;
+    Spinner spn1;
     EditText editTextFase, editTextDate,editTextEq1,editTextEq2,editTextGol1,editTextGol2, inforEq;
 
     @Override
@@ -34,15 +37,21 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 // TODO implementar metodo para comprobar que el input del usuario en el campo editTextFase tenga el formato de fecha correcta
-                if (editTextFase.getText().toString().isEmpty() || editTextDate.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
+                if (editTextDate.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
 
                     // Usar un Toast por el momento
                     Toast.makeText(MainActivity2.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
 
-                } else {
+                } else if (Integer.parseInt(editTextGol1.getText().toString()) > MAX_GOLES ||
+                        Integer.parseInt(editTextGol2.getText().toString()) > MAX_GOLES) {
 
-                    String fase = editTextFase.getText().toString();
+                    Toast.makeText(MainActivity2.this, "El número de goles no puede ser mayor que " + MAX_GOLES, Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    // Supuesto Guardado de datos
+                    String fase = spn1.getSelectedItem().toString();
                     String date = editTextDate.getText().toString();
                     String eq1 = editTextEq1.getText().toString();
                     String eq2 = editTextEq2.getText().toString();
@@ -102,6 +111,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnFase2 = findViewById(R.id.btnFase2);
         btnGuardarRes = findViewById(R.id.btnGuardarRes);
         btnLimpiarDatos = findViewById(R.id.btnLimpiarDatos);
+        spn1 = findViewById(R.id.spn1);
         editTextFase = findViewById(R.id.editTextFase);
         editTextDate = findViewById(R.id.editTextDate);
         editTextEq1 = findViewById(R.id.editTextEq1);
@@ -111,12 +121,12 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void limpiarDatos(){
-        editTextFase.setText("");
-        editTextDate.setText("");
-        editTextEq1.setText("");
-        editTextEq2.setText("");
-        editTextGol1.setText("");
-        editTextGol2.setText("");
+        spn1.setSelection(0);
+        editTextDate.setText(null);
+        editTextEq1.setText(null);
+        editTextEq2.setText(null);
+        editTextGol1.setText(null);
+        editTextGol2.setText(null);
     }
 
     public void ocultarCampos(){
