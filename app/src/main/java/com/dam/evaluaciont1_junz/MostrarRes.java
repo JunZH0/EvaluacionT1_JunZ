@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity4 extends AppCompatActivity {
+public class MostrarRes extends AppCompatActivity {
 
     Button btnSelect;
     EditText editTextTextPersonName2;

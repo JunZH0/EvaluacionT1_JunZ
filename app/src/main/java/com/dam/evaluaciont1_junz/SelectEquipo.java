@@ -2,7 +2,6 @@ package com.dam.evaluaciont1_junz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import com.google.android.material.tabs.TabLayout;
-
-public class MainActivity3 extends AppCompatActivity {
+public class SelectEquipo extends AppCompatActivity {
 // Pantalla de seleccion de equipos
     public static final String CLAVE_PAIS = "pais";
     TableLayout tabLayout1;

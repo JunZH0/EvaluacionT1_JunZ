@@ -24,7 +24,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MainActivity2 extends AppCompatActivity {
+public class RegistrarRes extends AppCompatActivity {
 // Pantalla de Registro de Resultado
     final Calendar calendario = Calendar.getInstance();
     static final int MAX_GOLES = 15;
@@ -53,14 +53,14 @@ public class MainActivity2 extends AppCompatActivity {
         editTextDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(MainActivity2.this,date,calendario.get(Calendar.YEAR),calendario.get(Calendar.MONTH),calendario.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(RegistrarRes.this,date,calendario.get(Calendar.YEAR),calendario.get(Calendar.MONTH),calendario.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
         editTextHora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(MainActivity2.this, new TimePickerDialog.OnTimeSetListener() {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(RegistrarRes.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         editTextHora.setText(hourOfDay+":"+minute);
@@ -78,12 +78,12 @@ public class MainActivity2 extends AppCompatActivity {
                 if (editTextDate.getText().toString().isEmpty() || editTextHora.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
 
-                    Toast.makeText(MainActivity2.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrarRes.this, "Por favor, rellene todos los campos", Toast.LENGTH_SHORT).show();
 
                 } else if (Integer.parseInt(editTextGol1.getText().toString()) > MAX_GOLES ||
                         Integer.parseInt(editTextGol2.getText().toString()) > MAX_GOLES) {
 
-                    Toast.makeText(MainActivity2.this, "El número de goles no puede ser mayor que " + MAX_GOLES, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrarRes.this, "El número de goles no puede ser mayor que " + MAX_GOLES, Toast.LENGTH_SHORT).show();
 
                 }
                 else {
@@ -97,7 +97,7 @@ public class MainActivity2 extends AppCompatActivity {
                     String gol2 = editTextGol2.getText().toString();
 
 
-                    Toast.makeText(MainActivity2.this, "Los datos se han guardado correctamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrarRes.this, "Los datos se han guardado correctamente", Toast.LENGTH_SHORT).show();
 
                     limpiarDatos();
                 }
@@ -112,7 +112,7 @@ public class MainActivity2 extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == RESULT_OK) {
-                        String equipo = result.getData().getStringExtra(MainActivity3.CLAVE_PAIS);
+                        String equipo = result.getData().getStringExtra(SelectEquipo.CLAVE_PAIS);
                         inforEq.setText(equipo);
                     }
                 }
@@ -150,7 +150,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void selectEquipo(ActivityResultLauncher<Intent> aRLauncher) {
-        Intent intent = new Intent(this, MainActivity3.class);
+        Intent intent = new Intent(this, SelectEquipo.class);
         aRLauncher.launch(intent);
     }
 
