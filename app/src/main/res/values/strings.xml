@@ -45,4 +45,11 @@
     <string name="txtViewConsultaRes">Consulta resultados por país</string>
     <string name="hintIntroPais">Introduce el país</string>
     <string name="textGuion"> - </string>
+    <string name="editTextDEM">Dinamarca</string>
+    <string name="editTextGHA">Ghana</string>
+    <string name="editTextNE">Holanda</string>
+    <string name="editTextIRN">Irán</string>
+    <string name="editTextJPN">Japón</string>
+    <string name="editTextMARR">Marruecos</string>
+    <string name="editTextSelectEq">Selección de equipo</string>
 </resources>
