@@ -1,23 +1,59 @@
 package com.dam.evaluaciont1_junz;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MostrarRes extends AppCompatActivity {
 
     Button btnSelect;
-    EditText editTextTextPersonName2;
+    EditText editTextPais2, inforEq2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.mostrar_res);
 
         btnSelect = findViewById(R.id.btnSelect);
-        editTextTextPersonName2 = findViewById(R.id.editTextTextPersonName2);
+        editTextPais2 = findViewById(R.id.editTextPais2);
+
+        btnSelect.setOnClickListener(new View.OnClickListener() {
+
+            ActivityResultLauncher<Intent> aRLauncher = getIntentActivityResultLauncher();
+            public void onClick(View v) {
+                inforEq2 = editTextPais2;
+                selectEquipo(aRLauncher);
+            }
+        });
 
 
+    }
+
+    private ActivityResultLauncher<Intent> getIntentActivityResultLauncher() {
+        ActivityResultLauncher<Intent> aRLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == RESULT_OK) {
+                            String equipo = result.getData().getStringExtra(SelectEquipo.CLAVE_PAIS);
+                            inforEq2.setText(equipo);
+                        }
+                    }
+                }
+        );
+        return aRLauncher;
+    }
+
+    private void selectEquipo(ActivityResultLauncher<Intent> aRLauncher) {
+        Intent intent = new Intent(this, SelectEquipo.class);
+        aRLauncher.launch(intent);
     }
 }

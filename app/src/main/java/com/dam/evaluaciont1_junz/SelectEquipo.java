@@ -22,7 +22,7 @@ public class SelectEquipo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.select_equipo);
         btnAceptar = findViewById(R.id.btnAceptar);
         btnCancelar = findViewById(R.id.btnCancelar);
         editTextIntroPais = findViewById(R.id.editTextIntroPais);
@@ -50,7 +50,6 @@ public class SelectEquipo extends AppCompatActivity {
             public void onClick(View v) {
                 setResult(RESULT_OK, getIntent());
                 getIntent().putExtra(CLAVE_PAIS, editTextIntroPais.getText().toString());
-
                 finish();
 
 

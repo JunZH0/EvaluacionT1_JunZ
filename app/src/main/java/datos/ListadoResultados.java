@@ -3,7 +3,7 @@ package datos;
 import java.util.ArrayList;
 
 public class ListadoResultados {
-    //TODO fuente de datos autogenerado, cambiar mas tarde
+
     private ArrayList<Resultado> listRes = new ArrayList<Resultado>() {{
         add(new Resultado("Fase de Grupos", "2021-06-11", "España", 1, "Suiza", 1));
         add(new Resultado("Fase de Grupos", "2021-06-12", "Francia", 1, "Alemania", 0));

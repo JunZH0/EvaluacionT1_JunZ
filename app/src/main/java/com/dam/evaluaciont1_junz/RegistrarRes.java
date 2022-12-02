@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -35,7 +36,7 @@ public class RegistrarRes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.registrar_res);
 
         initElementos();
         bloquearEdit();
@@ -74,7 +75,6 @@ public class RegistrarRes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // TODO implementar metodo para comprobar que el input del usuario en el campo editTextFase tenga el formato de fecha correcta
                 if (editTextDate.getText().toString().isEmpty() || editTextHora.getText().toString().isEmpty() || editTextEq1.getText().toString().isEmpty()
                         || editTextEq2.getText().toString().isEmpty() || editTextGol1.getText().toString().isEmpty() || editTextGol2.getText().toString().isEmpty()) {
 
@@ -105,19 +105,7 @@ public class RegistrarRes extends AppCompatActivity {
         });
 
 
-
-        ActivityResultLauncher<Intent> aRLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == RESULT_OK) {
-                        String equipo = result.getData().getStringExtra(SelectEquipo.CLAVE_PAIS);
-                        inforEq.setText(equipo);
-                    }
-                }
-            }
-        );
+        ActivityResultLauncher<Intent> aRLauncher = getIntentActivityResultLauncher();
 
 
         btnLimpiarDatos.setOnClickListener(v -> limpiarDatos());
@@ -136,6 +124,23 @@ public class RegistrarRes extends AppCompatActivity {
 
         });
 
+    }
+
+
+    private ActivityResultLauncher<Intent> getIntentActivityResultLauncher() {
+        ActivityResultLauncher<Intent> aRLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK) {
+                        String equipo = result.getData().getStringExtra(SelectEquipo.CLAVE_PAIS);
+                        inforEq.setText(equipo);
+                    }
+                }
+            }
+        );
+        return aRLauncher;
     }
 
     private void updateLabel(){
