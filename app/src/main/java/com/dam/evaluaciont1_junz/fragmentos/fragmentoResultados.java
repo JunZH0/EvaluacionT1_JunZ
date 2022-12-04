@@ -35,8 +35,7 @@ public class fragmentoResultados extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View vista = inflater.inflate(R.layout.fragment_fragmento_resultados, container, false);
         textViewFaseFrag = vista.findViewById(R.id.textViewFaseFrag);

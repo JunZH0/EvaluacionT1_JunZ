@@ -13,7 +13,7 @@ public class ListadoResultados {
         add(new Resultado("Fase de Grupos", "30/11/2022 16:00", "Arabia Saudí", 1, "Dinamarca", 0));
         add(new Resultado("Fase de Grupos", "30/11/2022 20:00", "Polonia", 3, "México", 2));
         add(new Resultado("Fase de Grupos", "30/11/2022 20:00", "Croacia", 1, "Belgica", 0));
-        add(new Resultado("Fase de Grupos", "01/12/2022 16:00", "Canada", 4, "Dinamarca", 1));
+        add(new Resultado("Fase de Grupos", "01/12/2022 16:00", "Canadá", 4, "Dinamarca", 1));
         add(new Resultado("Fase de Grupos", "01/12/2022 16:00", "Japón", 0, "España", 1));
         add(new Resultado("Fase de Grupos", "01/12/2022 20:00", "Costa Rica", 0, "Alemania", 1));
         add(new Resultado("Fase de Grupos", "01/12/2022 20:00", "Corea del Sur", 1, "Portugal", 3));
@@ -37,9 +37,6 @@ public class ListadoResultados {
     }};
 
 
-    public void addResultado(Resultado res) {
-        listRes.add(res);
-    }
 
 
     public static ArrayList<Resultado> getResultado(String pais) {
