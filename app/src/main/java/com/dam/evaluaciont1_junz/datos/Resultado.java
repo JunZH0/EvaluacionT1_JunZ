@@ -1,4 +1,4 @@
-package datos;
+package com.dam.evaluaciont1_junz.datos;
 
 public class Resultado {
     private String fase;
@@ -36,5 +36,19 @@ public class Resultado {
         return equipo2;
     }
 
+    public String getFase() {
+        return fase;
+    }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public int getGol1() {
+        return gol1;
+    }
+
+    public int getGol2() {
+        return gol2;
+    }
 }

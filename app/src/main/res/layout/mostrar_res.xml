@@ -41,7 +41,10 @@
             android:ems="10"
             android:hint="@string/hintIntroPais"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
 
         <Button
             android:id="@+id/btnSelect"
@@ -68,16 +71,7 @@
             android:id="@+id/frameLayout1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
 
 
@@ -85,86 +79,37 @@
             android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView2"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
         <FrameLayout
             android:id="@+id/frameLayout3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView3"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
         <FrameLayout
             android:id="@+id/frameLayout4"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView4"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
         <FrameLayout
             android:id="@+id/frameLayout5"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView5"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
         <FrameLayout
             android:id="@+id/frameLayout6"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView6"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
 
         <FrameLayout
             android:id="@+id/frameLayout7"
             android:layout_width="match_parent"
             android:layout_height="@dimen/frameLayoutSize"
-            android:layout_weight="1">
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView7"
-                android:name="com.dam.evaluaciont1_junz.fragmentoResultados"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_fragmento_resultados" />
-        </FrameLayout>
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

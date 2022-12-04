@@ -55,4 +55,7 @@
     <string name="editTextSelectEq">Selección de equipo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="limpiar">LIMPIAR DATOS</string>
+    <string name="sel_eq">SELECCIONAR</string>
+    <string name="pais">INTRODUCE EL PAIS</string>
 </resources>

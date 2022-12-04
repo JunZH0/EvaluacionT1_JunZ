@@ -18,7 +18,6 @@ public class SelectEquipo extends AppCompatActivity {
     EditText editTextIntroPais;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
